@@ -16,7 +16,7 @@ CREATE TABLE todos (
     task VARCHAR(30) NOT NULL,
     completed BOOLEAN DEFAULT false,
     date_created DATETIME DEFAULT CURRENT_TIMESTAMP, 
-    userId INT NOT NULL,
+    userId INT,
     PRIMARY KEY (id), 
     FOREIGN KEY (userID)
     REFERENCES users(id)
