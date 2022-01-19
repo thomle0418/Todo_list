@@ -36,8 +36,8 @@ try {
     //about how many rows were affected and maybe the inserted id or updated of the regarding data
     //it also gives us an array with 2 elements. The 1st one is an object where we have the information we need 
     //2nd is a null
-    const todosResult = await connection.query(getTodoById, [result.insertId]);
-    res.json(todosResult);
+    const [todosResult] = await connection.query(getTodoById, [result.insertId]);
+    res.json(todosResult[0]);
 }catch(e){
     res.status(400).json(e);
 }
